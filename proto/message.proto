@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package user;
+
+option go_package="github.com/xhyonline/grpc-graceful-stop/gen";
+
+
+
+message Request {
+  string Name =1;
+  int64 Age =2;
+}
+
+
+message Response {
+  string SelfDescription =1;
+}
+
+service Graceful {
+   rpc GracefulMessage (Request) returns (Response);
+}
